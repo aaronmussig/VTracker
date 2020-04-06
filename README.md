@@ -45,4 +45,4 @@ vt.add('G003508795', {'R80': 's__Faecalibacterium prausnitzii_B',
 sankey_json = vt.as_sankey_json()
 ```
 
-![Sankey diagram example](https://github.com/aaronmussig/VTracker/raw/master/docs/img/taxon_history.png)
+![Sankey diagram example](https://raw.githubusercontent.com/aaronmussig/VTracker/master/docs/imgs/taxon_history.png)
