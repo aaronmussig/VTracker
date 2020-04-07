@@ -18,7 +18,7 @@
 __title__ = 'VTracker'
 __description__ = 'For tracking the relationship between group membership changes across versions.'
 __url__ = 'https://github.com/aaronmussig/vtracker'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Aaron Mussig'
 __author_email__ = 'aaronmussig@gmail.com'
 __license__ = 'GPL3'

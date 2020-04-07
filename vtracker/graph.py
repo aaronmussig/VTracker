@@ -1,4 +1,21 @@
-from typing import Optional, Dict, Tuple, Generator, Set, Hashable
+###############################################################################
+#                                                                             #
+#    This program is free software: you can redistribute it and/or modify     #
+#    it under the terms of the GNU General Public License as published by     #
+#    the Free Software Foundation, either version 3 of the License, or        #
+#    (at your option) any later version.                                      #
+#                                                                             #
+#    This program is distributed in the hope that it will be useful,          #
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of           #
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            #
+#    GNU General Public License for more details.                             #
+#                                                                             #
+#    You should have received a copy of the GNU General Public License        #
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.     #
+#                                                                             #
+###############################################################################
+
+from typing import Optional, Dict, Tuple, Generator, Set
 
 from .exceptions import DuplicateNode, DuplicateEdge
 
@@ -14,7 +31,7 @@ class Graph(object):
         self._edge_id = 0  # type: int
 
     def add_node(self, key, attrs=None):
-        # type: (Hashable, Optional[dict]) -> None
+        # type: (str, Optional[dict]) -> None
         """Add a node to the graph.
 
         Parameters
@@ -106,7 +123,7 @@ class Graph(object):
         -------
         Generator[Node]
             Yields all nodes in the graph."""
-        for node in self._nodes.values():
+        for node in sorted(self._nodes.values(), key=lambda n: n._node_id):
             yield node
 
     def iter_edges(self):
@@ -117,7 +134,7 @@ class Graph(object):
         -------
         Generator[Edge]
             Yields all edges in the graph."""
-        for edge in self._edges.values():
+        for edge in sorted(self._edges.values(), key=lambda e: e._edge_id):
             yield edge
 
 
