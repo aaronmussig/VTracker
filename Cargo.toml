@@ -1,0 +1,18 @@
+[package]
+name = "vtracker"
+version = "1.0.0"
+authors = ["Aaron Mussig <aaronmussig@gmail.com>"]
+edition = "2021"
+description = "For tracking the relationship between group membership changes across versions."
+readme = "README.md"
+repository = "https://github.com/aaronmussig/VTracker"
+license = "GPL-3.0"
+
+[lib]
+crate-type = ["lib"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+strip = true
